@@ -1,11 +1,14 @@
-echo "http://haymil.ml:80 {
-redir https://haymil.ml:12671{url}
+Caddy一键安装脚本：
+ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
+
+echo "http://xxx.ml:80 {
+redir https://xxx.ml:12671{url}
 }
-https://haymil.ml:12671 {
+https://xxx.ml:12671 {
 gzip
-tls grifn6lj@olutxg.ml
+tls xxx@xxx.ml
 root /var/www/web-master
-redir  https://haymil.ml{uri} 301 
+redir  https://xxx.ml{uri} 301 
 }" > /usr/local/caddy/Caddyfile
 
 wget https://github.com/mospring001/web/archive/master.zip
