@@ -1,14 +1,11 @@
-Caddy一键安装脚本：
- wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
-
-echo "http://xxx.ml:80 {
-redir https://xxx.ml:12671{url}
+echo "http://haymil.ml:80 {
+redir https://haymil.ml:12671{url}
 }
-https://xxx.ml:12671 {
+https://haymil.ml:12671 {
 gzip
-tls xxx@xxx.ml
+tls grifn6lj@olutxg.ml
 root /var/www/web-master
-redir  https://xxx.ml{uri} 301 
+redir  https://haymil.ml{uri} 301 
 }" > /usr/local/caddy/Caddyfile
 
 wget https://github.com/mospring001/web/archive/master.zip
@@ -23,7 +20,7 @@ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.
 chmod +x shadowsocks-all.sh
 ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 
-修改配置文件：
+修改配置文件：/etc/shadowsocks-r/config.json
 vi /etc/shadowsocks-r/config.json
 1.“server_port”: 端口改为443
 2."redirect": ["*:443#127.0.0.1:12671"], 
