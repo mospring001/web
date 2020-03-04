@@ -12,13 +12,21 @@ redir  https://xxx.ml{uri} 301
 }" > /usr/local/caddy/Caddyfile
 
 mkdir /var/www
+
 cd /var/www
+
 wget https://github.com/mospring001/web/archive/master.zip
+
 apt install unzip
+
 unzip master.zip
+
 cd /var/www/web-master
+
 unzip web.zip
+
 cd
+
 重启：service caddy restart  
 查看状态：service caddy status
 
