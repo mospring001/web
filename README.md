@@ -28,16 +28,20 @@ unzip web.zip
 cd
 
 重启：service caddy restart  
+
 查看状态：service caddy status
 
 wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 chmod +x shadowsocks-all.sh
 ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 
-修改配置文件：/etc/shadowsocks-r/config.json
+修改配置文件：
 vi /etc/shadowsocks-r/config.json
+
 1.“server_port”: 端口改为443
+
 2."redirect": ["*:443#127.0.0.1:12671"], 
+
 重启SSR服务
 
 /etc/init.d/shadowsocks-r restart
