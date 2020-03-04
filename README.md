@@ -2,20 +2,13 @@ Caddy一键安装脚本：
  wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
 
 echo "http://xxx.ml:80 {
-
 redir https://xxx.ml:12671{url}
 }
-
 https://xxx.ml:12671 {
-
 gzip
-
 tls xxx@xxx.ml
-
 root /var/www/web-master
-
 redir  https://xxx.ml{uri} 301 
-
 }" > /usr/local/caddy/Caddyfile
 
 mkdir /var/www
